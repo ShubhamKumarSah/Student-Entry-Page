@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="https://www.careerindia.com/college-logo/128x128/20/Derozio-Memorial-College-Kolkata.jpg" type="image/x-icon"> 
+        <title>
+            Online Class - Student entry form
+        </title>
+    </head>
+    <body>
+        <style>
+            body
+            {
+                margin: 0;
+                background-image: url("https://2.bp.blogspot.com/-asDVZSQrCN0/UYGs8vg36ZI/AAAAAAAAHR8/iZcBCx3oiBQ/s0/background.jpg");
+            }
+
+            h1
+            {
+                text-align: center;
+                
+            }
+
+            p
+            {
+                text-align: center;
+                color: rgb(72, 72, 72);
+            }
+
+            .form
+            {
+                background: #fbffe3;
+                display: block;
+                margin: 0 auto;
+                border: 2px solid rgba(163, 153, 153, 0.857);
+                width: 30%;
+                padding: 15px;
+                box-shadow: 20px 20px 20px grey;
+                border-radius: 25px;
+            }
+
+            .alert
+            {
+                text-align: left;
+            }
+
+            .red{
+                color: red;
+            }
+
+            .btn
+            {
+                font-size: 15px;
+                margin: 0 auto;
+                width: 50%;
+                background: #06a8ff;
+                border-radius: 30px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: center;
+                color: #fbffe3;
+                font-weight: bolder;
+            }
+
+            .btn:hover
+            {
+                cursor: pointer;
+                background: transparent;
+                border: 2.5px solid #84ccde;
+                color: #06a8ff;
+                box-shadow: 5px 5px 5px #06a8ff;
+                
+            }
+
+
+            
+            footer
+            {
+                position:absolute;
+                padding-bottom: 15px;
+                bottom:0;
+                width:100%;
+                height:60px;   /* Height of the footer */
+                background:#6cccff;
+                color: black;
+                font-weight: bolder;
+            }
+
+        </style>
+        <h1>Internet Technology Class 2021 (Online-Mode)</h1>
+        <b class="red"><p>Fill the details to join the class</p></b>
+        <div class="form">
+            <form name="f1" onsubmit="return check();" action="Welcome.jsp">
+                <p class="alert">All (<b class="red">*</b>) marked fields are mandatory</p>
+                <b><lebal for="fname" >Full Name <b class="red">*</b></lebal></b><br>
+                <section class="ss-item-required">
+                <input type="text" name="fname" id="fname" placeholder="Enter your full name"><br><br>
+                <b><lebal for="email" >User Name <b class="red">*</b></lebal></b><br>
+                <input type="email" name="username" id="username" placeholder="i.e. Your E-mail ID"><br><br>
+                <b><lebal for="password" >Password <b class="red">*</b></lebal></b><br>
+                <input type="password" name="password" id="password" placeholder="Enter Your Password"><br><br>
+                <b><lebal for="password2" >Re-enter Password <b class="red">*</b></lebal></b><br>
+                <input type="password" name="password2" id="password2" placeholder="Re-enter the Password"><br><br></section>
+
+                <b><lebal for="gender" >Gender</lebal></b><br>
+                <input type="radio" name="gender" id="male" value="Male">
+                <lebal for="male" >Male</lebal><br>
+                <input type="radio" name="gender" id="femele" value="Female">
+                <lebal for="female" >Female</lebal><br>
+                <input type="radio" name="gender" id="other" value="Other">
+                <lebal for="other" >Other</lebal><br><br>
+                
+                <b><lebal for="Language" >Language</lebal></b><br>
+                <input type="checkbox" name="Language" value="Hindi">
+                <lebal for="Hindi">Hindi</lebal><br>
+                <input type="checkbox" name="Language" value="Bangla">
+                <lebal for="Bangla">Bangla</lebal><br>
+                <input type="checkbox" name="Language" value="English">
+                <lebal for="English">English</lebal><br>
+                <input type="checkbox" name="Language" value="Marathi">
+                <lebal for="Marathi">Marathi</lebal><br>
+                <input type="checkbox" name="Language" value="Assamese">
+                <lebal for="Assamese">Assamese</lebal><br>
+                <input type="checkbox" name="Language" value="Punjabi">
+                <lebal for="Punjabi">Punjabi</lebal><br><br>
+                
+                <b><lebal for="Address">Address <b class="red">*</b></lebal></b><br>
+                <textarea name="Address" id="Address" placeholder="Enter Complete Address"></textarea><br><br>
+                
+                <input type="submit" value="Submit" class="btn">
+            </form>
+        </div>
+
+        <script type="text/javascript">
+
+            function check()
+            {
+                    var firstpassword=document.f1.password.value;
+                    var secondpassword=document.f1.password2.value;
+                    var x=document.f1.username.value;  
+                    var atposition=x.indexOf("@");  
+                    var dotposition=x.lastIndexOf(".");
+
+                    if (document.forms['f1'].fname.value == "" || document.forms['f1'].username.value == "" || document.forms['f1'].password.value == "" || document.forms['f1'].password2.value == "" || document.forms['f1'].Address.value == "") {
+                        alert("Mandatory fields can't be empty!");
+                        return false;
+                    }
+
+                    if(firstpassword==secondpassword)
+                    {
+                        return true;
+                    }
+
+                    if(atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+                        {
+                            return true;
+                        }
+                    
+                    else if(firstpassword!=secondpassword)
+                    {
+                        alert("password must be same!");  
+                        return false;  
+                    }  
+                    
+                    else
+                    {
+                        alert("Please enter a valid e-mail address");
+                        return false;
+                    }
+            }
+
+        </script>
+        <footer>
+            <p>
+                This Responsive webform has been created by <b style="color: blue">Shubham & Shivam</b> All Rights Reserved
+            </p>
+        </footer>
+    </body>
+</html>
