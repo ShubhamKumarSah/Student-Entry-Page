@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+            String fname=request.getParameter("fname");
+            String username=request.getParameter("username");
+            String password=request.getParameter("password");
+            String gender=request.getParameter("gender");
+            String Address=request.getParameter("Address");
+            String Language=request.getParameter("Language");
+            String s[] = request.getParameterValues("Language");
+                
+        %>
         <title>
-            Online Class - Student entry form
+            Welcome <%= fname%>
         </title>
     </head>
     <body>
@@ -119,17 +129,6 @@
         </style>
         <h1>Internet Technology Class 2021 (Online-Mode)</h1>
         <div class="box">
-            <%
-                String fname=request.getParameter("fname");
-                String username=request.getParameter("username");
-                String password=request.getParameter("password");
-                String gender=request.getParameter("gender");
-                String Address=request.getParameter("Address");
-                String Language=request.getParameter("Language");
-                String s[] = request.getParameterValues("Language");
-                
-            %>
-
             <h1>Welcome <%= fname%> </h1>
             <table>
                 <tr>
